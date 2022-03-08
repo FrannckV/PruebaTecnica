@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="PruebaTecnicaSalinas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GDs-d3-hfn" userLabel="Page">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yzV-sM-sDB" userLabel="Header">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="uy9-pl-RFL" userLabel="Title Bar">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prueba Técnica" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-w0-teS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="337" height="100"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5on-Sk-PZq">
+                                                        <rect key="frame" x="337" y="0.0" width="77" height="100"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="paintbrush.fill" catalog="system"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="1nd-w0-teS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="uy9-pl-RFL" secondAttribute="leading" constant="10" id="R0F-cb-qtx"/>
+                                                    <constraint firstItem="1nd-w0-teS" firstAttribute="top" relation="lessThanOrEqual" secondItem="uy9-pl-RFL" secondAttribute="top" constant="10" id="iP6-l1-7IH"/>
+                                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="1nd-w0-teS" secondAttribute="bottom" constant="10" id="osg-4z-4ZV"/>
+                                                    <constraint firstItem="5on-Sk-PZq" firstAttribute="leading" relation="lessThanOrEqual" secondItem="1nd-w0-teS" secondAttribute="trailing" constant="10" id="tJ4-r5-ZEM"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ZDX-xj-6W6"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jU9-NC-BFY" userLabel="Body">
+                                        <rect key="frame" x="0.0" y="115" width="414" height="625"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="center" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N38-22-Y17">
+                                                <rect key="frame" x="10" y="0.0" width="394" height="60"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P8G-p0-4Cl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="274" height="60"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L48-4G-KMg">
+                                                        <rect key="frame" x="282" y="0.0" width="112" height="60"/>
+                                                        <color key="tintColor" red="1" green="0.82745098039999998" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="didPhotoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P5P-6r-uiD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="nVG-0P-upI"/>
+                                                </constraints>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycp-8E-3EM">
+                                                <rect key="frame" x="0.0" y="75" width="414" height="550"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="N38-22-Y17" secondAttribute="trailing" constant="10" id="35i-iD-ALX"/>
+                                            <constraint firstAttribute="trailing" secondItem="N38-22-Y17" secondAttribute="trailing" constant="10" id="djS-Qw-c5T"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="D41-VC-oY1" userLabel="Footer">
+                                        <rect key="frame" x="0.0" y="755" width="414" height="63"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmD-UT-m4X">
+                                                <rect key="frame" x="10" y="0.0" width="394" height="63"/>
+                                                <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Guardar" cornerStyle="fixed">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="guardarPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FOo-Rk-NhU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="kmD-UT-m4X" firstAttribute="leading" secondItem="D41-VC-oY1" secondAttribute="leading" constant="10" id="B8U-u9-IHh"/>
+                                            <constraint firstAttribute="trailing" secondItem="kmD-UT-m4X" secondAttribute="trailing" constant="10" id="KC0-xz-pj6"/>
+                                            <constraint firstItem="kmD-UT-m4X" firstAttribute="top" secondItem="D41-VC-oY1" secondAttribute="top" id="krj-wU-WzQ"/>
+                                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="kmD-UT-m4X" secondAttribute="bottom" constant="10" id="nZK-VK-zEK"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="D41-VC-oY1" secondAttribute="bottom" id="0xN-hE-Hnr"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="D41-VC-oY1" secondAttribute="bottom" constant="10" id="8Fb-MY-4Kx"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="yzV-sM-sDB" secondAttribute="trailing" constant="10" id="BTd-eO-Wi0"/>
+                                    <constraint firstItem="yzV-sM-sDB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="GDs-d3-hfn" secondAttribute="leading" constant="10" id="ETr-DY-Wyw"/>
+                                    <constraint firstItem="yzV-sM-sDB" firstAttribute="top" relation="lessThanOrEqual" secondItem="GDs-d3-hfn" secondAttribute="top" constant="10" id="Ob7-Gd-BrS"/>
+                                    <constraint firstItem="jU9-NC-BFY" firstAttribute="leading" relation="lessThanOrEqual" secondItem="GDs-d3-hfn" secondAttribute="leading" constant="10" id="Rex-vE-YuM"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jU9-NC-BFY" secondAttribute="trailing" constant="10" id="W7U-Xs-EcC"/>
+                                    <constraint firstItem="jU9-NC-BFY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yzV-sM-sDB" secondAttribute="bottom" constant="10" id="WeO-kB-Te1"/>
+                                    <constraint firstItem="D41-VC-oY1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="GDs-d3-hfn" secondAttribute="leading" constant="10" id="Xir-8S-nkz"/>
+                                    <constraint firstItem="D41-VC-oY1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jU9-NC-BFY" secondAttribute="bottom" constant="10" id="bMh-WA-Xs8"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="D41-VC-oY1" secondAttribute="trailing" constant="10" id="gCC-SJ-hGY"/>
+                                    <constraint firstItem="jU9-NC-BFY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yzV-sM-sDB" secondAttribute="bottom" id="ntG-PJ-Rx2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.0039215686274509803" green="0.5725490196078431" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GDs-d3-hfn" secondAttribute="bottom" id="E0b-po-hHn"/>
+                            <constraint firstItem="GDs-d3-hfn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c2l-Rv-NXP"/>
+                            <constraint firstItem="GDs-d3-hfn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n5A-Dn-NPm"/>
+                            <constraint firstItem="GDs-d3-hfn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uRV-ef-qI3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="P8G-p0-4Cl" id="wo3-l4-hfi"/>
+                        <outlet property="photoButton" destination="L48-4G-KMg" id="tc5-Bq-4oJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="paintbrush.fill" catalog="system" width="122" height="128"/>
+    </resources>
+</document>
