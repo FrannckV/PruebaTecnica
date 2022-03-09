@@ -11,5 +11,6 @@ struct K {
     static let colorGreenChild = "ThemeGreen"
     static let colorBlueChild = "ThemeBlue"
     static let urlKey = "url"
-    
+    static let strokeEnd = "strokeEnd"
+    static let animationKey = "animation"
 }

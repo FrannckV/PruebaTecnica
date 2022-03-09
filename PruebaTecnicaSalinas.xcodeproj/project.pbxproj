@@ -23,6 +23,8 @@
 		4B3F572527D703BE00FDFF1E /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 4B3F572427D703BE00FDFF1E /* FirebaseFunctions */; };
 		4B3F572727D703BE00FDFF1E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4B3F572627D703BE00FDFF1E /* FirebaseStorage */; };
 		4B3F572927D703BE00FDFF1E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 4B3F572827D703BE00FDFF1E /* FirebaseStorageCombine-Community */; };
+		4B9267FD27D8462800876DA4 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4B9267FC27D8462800876DA4 /* Charts */; };
+		4B92680027D848DC00876DA4 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 4B9267FF27D848DC00876DA4 /* TinyConstraints */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B92680027D848DC00876DA4 /* TinyConstraints in Frameworks */,
 				4B3F572527D703BE00FDFF1E /* FirebaseFunctions in Frameworks */,
+				4B9267FD27D8462800876DA4 /* Charts in Frameworks */,
 				4B3F572727D703BE00FDFF1E /* FirebaseStorage in Frameworks */,
 				4B3F572927D703BE00FDFF1E /* FirebaseStorageCombine-Community in Frameworks */,
 				4B3F572127D703BE00FDFF1E /* FirebaseDatabase in Frameworks */,
@@ -138,6 +142,8 @@
 				4B3F572427D703BE00FDFF1E /* FirebaseFunctions */,
 				4B3F572627D703BE00FDFF1E /* FirebaseStorage */,
 				4B3F572827D703BE00FDFF1E /* FirebaseStorageCombine-Community */,
+				4B9267FC27D8462800876DA4 /* Charts */,
+				4B9267FF27D848DC00876DA4 /* TinyConstraints */,
 			);
 			productName = PruebaTecnicaSalinas;
 			productReference = 4B3F56FB27D6A1CF00FDFF1E /* PruebaTecnicaSalinas.app */;
@@ -169,6 +175,8 @@
 			mainGroup = 4B3F56F227D6A1CF00FDFF1E;
 			packageReferences = (
 				4B3F571F27D703BE00FDFF1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4B9267FB27D8462800876DA4 /* XCRemoteSwiftPackageReference "Charts" */,
+				4B9267FE27D848DC00876DA4 /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 			);
 			productRefGroup = 4B3F56FC27D6A1CF00FDFF1E /* Products */;
 			projectDirPath = "";
@@ -434,6 +442,22 @@
 				kind = branch;
 			};
 		};
+		4B9267FB27D8462800876DA4 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		4B9267FE27D848DC00876DA4 /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -461,6 +485,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4B3F571F27D703BE00FDFF1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		4B9267FC27D8462800876DA4 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B9267FB27D8462800876DA4 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		4B9267FF27D848DC00876DA4 /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B9267FE27D848DC00876DA4 /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
