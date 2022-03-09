@@ -14,37 +14,29 @@ import TinyConstraints
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // MARK: - PROPERTIES
+    
+    // IBOutlet
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var photoButton: UIButton!
     
+    // let
     private let database = Database.database().reference()
     private let storage = Storage.storage().reference()
+
     
+    //var
     private var nombre: String = ""
-    
     var graficaManager = GraficaManager()
-    
     var image: UIImage?
-    
-    //var startAngle: CGFloat = -(.pi / 2)
-    
-    //let shape = CAShapeLayer()
-    //var shapes = [CAShapeLayer]()
-    
-    /*private let label: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.text = "Titulo"
-        label.font = .systemFont(ofSize: 3, weight: .light)
-        return label
-    }()*/
-    
-    lazy var pieChartView: PieChartView = {
+    lazy var pieChart: PieChartView = {
         let chartView = PieChartView()
         chartView.backgroundColor = .systemBlue
         return chartView
     }()
-
+    //var barChart = BarChartView()
+    
+    // MARK: - FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,73 +44,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         graficaManager.fetchGrafica()
         
-//        view.backgroundColor = UIColor(hex: getColor(color: K.colorBlueChild))
         view.backgroundColor = UIColor(hexString: "#66B1AC")
         
-        view.addSubview(pieChartView)
-        pieChartView.centerInSuperview()
-        pieChartView.width(to: view)
-        pieChartView.heightToWidth(of: view)
+        pieChart.delegate = self
         
-        
-        self.title = "Half Pie Chart"
-                
-               /* self.options = [.toggleValues,
-                                .toggleXValues,
-                                .togglePercent,
-                                .toggleHole,
-                                .animateX,
-                                .animateY,
-                                .animateXY,
-                                .spin,
-                                .drawCenter,
-                                .saveToGallery,
-                                .toggleData]
-                
-                self.setup(pieChartView: pieChartView)*/
-                
-                pieChartView.delegate = self
-                
-                pieChartView.holeColor = .white
-                pieChartView.transparentCircleColor = NSUIColor.white.withAlphaComponent(0.43)
-                pieChartView.holeRadiusPercent = 0.58
-                pieChartView.rotationEnabled = false
-                pieChartView.highlightPerTapEnabled = true
-                
-                pieChartView.maxAngle = 180 // Half chart
-                pieChartView.rotationAngle = 180 // Rotate to make the half on the upper side
-                pieChartView.centerTextOffset = CGPoint(x: 0, y: -20)
-                
-                let l = pieChartView.legend
-                l.horizontalAlignment = .center
-                l.verticalAlignment = .top
-                l.orientation = .horizontal
-                l.drawInside = false
-                l.xEntrySpace = 7
-                l.yEntrySpace = 0
-                l.yOffset = 0
-        //        pieChartView.legend = l
-                // entry label styling
-                pieChartView.entryLabelColor = .white
-                pieChartView.entryLabelFont = UIFont(name:"HelveticaNeue-Light", size:12)!
-                
-                self.updateChartData()
-                
-                pieChartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
-        
-    }
-    
-   /* @objc func didTapButton() {
-        let animation = CABasicAnimation(keyPath: K.strokeEnd)
-        animation.toValue = 1
-        animation.duration = 5
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = .forwards
-        for shape in shapes {
-            shape.add(animation, forKey: K.animationKey)
-        }
-        
-    }*/
+     }
     
     @IBAction func didPhotoButtonPressed(_ sender: Any) {
             let picker = UIImagePickerController()
@@ -127,52 +57,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             picker.delegate = self
             present(picker, animated: true)
     }
-    /*func generateChart(options: [Options]){
-        
-        label.sizeToFit()
-        view.addSubview(label)
-        label.center = view.center
-        
-        let circleBackground = UIBezierPath(arcCenter: view.center,
-                                      radius: 150,
-                                      startAngle: -(.pi / 2),
-                                      endAngle: (.pi * 2),
-                                      clockwise: true)
-        let trackShape = CAShapeLayer()
-        trackShape.path = circleBackground.cgPath
-        trackShape.fillColor = UIColor.clear.cgColor
-        trackShape.lineWidth = 15
-        trackShape.strokeColor = UIColor.lightGray.cgColor
-        view.layer.addSublayer(trackShape)
-        
-        for op in options {
-            let endAngle = (.pi * 2 * op.percetnageDegrees) / 360
-            let circlePath = UIBezierPath(arcCenter: view.center,
-                                          radius: 150,
-                                          startAngle: startAngle,
-                                          endAngle: endAngle,
-                                          clockwise: true)
-            
-            shape.path = circlePath.cgPath
-            shape.lineWidth = 15
-            shape.strokeColor = UIColor(hexString: op.color).cgColor
-            shape.fillColor = UIColor.clear.cgColor
-            shape.strokeEnd = 0
-            
-            startAngle = endAngle
-            
-            shapes.append(shape)
-        }
-        for shape in shapes {
-            view.layer.addSublayer(shape)
-        }
-        let button = UIButton(frame: CGRect(x: 20, y: view.frame.size.height-70, width: view.frame.size.width-40, height: 50))
-        view.addSubview(button)
-        button.setTitle("Animate", for: .normal)
-        button.backgroundColor = .systemGreen
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        
-    }*/
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         photoButton.setImage(resizeImage(image: image!, targetSize: CGSize(width: 90, height: 90))
@@ -318,84 +202,23 @@ extension UIColor {
 }
 // MARK: - ChartViewDelegate
 extension ViewController: ChartViewDelegate {
-    
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
-    }
-    
-    func updateChartData() {
-            /*if shouldHideData {
-                pieChartView.data = nil
-                return
-            }*/
-            
-            self.setData(4, range: 100)
+    override func viewDidLayoutSubviews() {
+     //   super.viewDidLayoutSubviews()
+        
+        view.addSubview(pieChart)
+        pieChart.centerInSuperview()
+        pieChart.width(to: view)
+        pieChart.height(600)
+       
+        var entries = [ChartDataEntry]()
+        
+        for x in 0..<10 {
+            entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
         }
-    /*func optionTapped(_ option: Option) {
-            switch option {
-            case .toggleXValues:
-                pieChartView.drawEntryLabelsEnabled = !pieChartView.drawEntryLabelsEnabled
-                pieChartView.setNeedsDisplay()
-                
-            case .togglePercent:
-                pieChartView.usePercentValuesEnabled = !pieChartView.usePercentValuesEnabled
-                pieChartView.setNeedsDisplay()
-                
-            case .toggleHole:
-                pieChartView.drawHoleEnabled = !pieChartView.drawHoleEnabled
-                pieChartView.setNeedsDisplay()
-                
-            case .drawCenter:
-                pieChartView.drawCenterTextEnabled = !pieChartView.drawCenterTextEnabled
-                pieChartView.setNeedsDisplay()
-                
-            case .animateX:
-                pieChartView.animate(xAxisDuration: 1.4)
-                
-            case .animateY:
-                pieChartView.animate(yAxisDuration: 1.4)
-                
-            case .animateXY:
-                pieChartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4)
-                
-            case .spin:
-                pieChartView.spin(duration: 2,
-                               fromAngle: pieChartView.rotationAngle,
-                               toAngle: pieChartView.rotationAngle + 360,
-                               easingOption: .easeInCubic)
-                
-            default:
-                print("nothing")
-                //handleOption(option, forChartView: pieChartView)
-            }
-        }*/
-    
-    func setData(_ count: Int, range: UInt32) {
-        let entries = (0..<count).map { (i) -> PieChartDataEntry in
-                    // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-                    return PieChartDataEntry(value: Double(arc4random_uniform(range) + range / 5),
-                                             label: "HI")//parties[i % parties.count])
-                }
-                
-                let set = PieChartDataSet(entries: entries, label: "Election Results")
-                set.sliceSpace = 3
-                set.selectionShift = 5
-                set.colors = ChartColorTemplates.material()
-                
-                let data = PieChartData(dataSet: set)
-                
-                let pFormatter = NumberFormatter()
-                pFormatter.numberStyle = .percent
-                pFormatter.maximumFractionDigits = 1
-                pFormatter.multiplier = 1
-                pFormatter.percentSymbol = " %"
-                data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
-            
-                data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 11)!)
-                data.setValueTextColor(.white)
-                
-                pieChartView.data = data
-                
-                pieChartView.setNeedsDisplay()
+        
+        let set = PieChartDataSet(entries: entries)
+        set.colors = ChartColorTemplates.material()
+        let data = PieChartData(dataSet: set)
+        pieChart.data = data
     }
 }

@@ -23,7 +23,7 @@ struct Options {
     let color: String
     
     // MARK: - COMPUTED PROPERTIES
-    var percetnageDegrees: Double {
-        return Double((percetnage * 10) / 36) 
+    var percetnageDouble: Double {
+        return Double(percetnage) * 0.1
     }
 }
