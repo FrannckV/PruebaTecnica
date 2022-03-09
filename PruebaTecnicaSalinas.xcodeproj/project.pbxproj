@@ -25,6 +25,10 @@
 		4B3F572927D703BE00FDFF1E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 4B3F572827D703BE00FDFF1E /* FirebaseStorageCombine-Community */; };
 		4B9267FD27D8462800876DA4 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4B9267FC27D8462800876DA4 /* Charts */; };
 		4B92680027D848DC00876DA4 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 4B9267FF27D848DC00876DA4 /* TinyConstraints */; };
+		4B92680227D878F600876DA4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92680127D878F600876DA4 /* HomeViewController.swift */; };
+		4B92680827D879DE00876DA4 /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92680727D879DE00876DA4 /* ConfiguracionViewController.swift */; };
+		4B92680A27D87BF000876DA4 /* GraficasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92680927D87BF000876DA4 /* GraficasViewController.swift */; };
+		4B93477F27D8897B00E56086 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93477E27D8897B00E56086 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		4B3F571927D6D2FC00FDFF1E /* GraficaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaModel.swift; sourceTree = "<group>"; };
 		4B3F571B27D6D52300FDFF1E /* GraficaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaData.swift; sourceTree = "<group>"; };
 		4B3F571D27D7020800FDFF1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B92680127D878F600876DA4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4B92680727D879DE00876DA4 /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
+		4B92680927D87BF000876DA4 /* GraficasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficasViewController.swift; sourceTree = "<group>"; };
+		4B93477E27D8897B00E56086 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 				4B3F571227D6A27900FDFF1E /* Model */,
 				4B3F571327D6A28A00FDFF1E /* View */,
 				4B3F571427D6A29500FDFF1E /* Controllers */,
+				4B93477D27D8896700E56086 /* Utilities */,
 				4B3F570727D6A1D200FDFF1E /* Assets.xcassets */,
 				4B3F570927D6A1D200FDFF1E /* LaunchScreen.storyboard */,
 				4B3F570C27D6A1D200FDFF1E /* Info.plist */,
@@ -116,8 +125,19 @@
 			isa = PBXGroup;
 			children = (
 				4B3F570227D6A1CF00FDFF1E /* ViewController.swift */,
+				4B92680127D878F600876DA4 /* HomeViewController.swift */,
+				4B92680727D879DE00876DA4 /* ConfiguracionViewController.swift */,
+				4B92680927D87BF000876DA4 /* GraficasViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4B93477D27D8896700E56086 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4B93477E27D8897B00E56086 /* Extensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,12 +226,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B92680A27D87BF000876DA4 /* GraficasViewController.swift in Sources */,
+				4B92680827D879DE00876DA4 /* ConfiguracionViewController.swift in Sources */,
 				4B3F570327D6A1CF00FDFF1E /* ViewController.swift in Sources */,
 				4B3F571A27D6D2FC00FDFF1E /* GraficaModel.swift in Sources */,
 				4B3F56FF27D6A1CF00FDFF1E /* AppDelegate.swift in Sources */,
+				4B92680227D878F600876DA4 /* HomeViewController.swift in Sources */,
 				4B3F571827D6D2D000FDFF1E /* GraficaManager.swift in Sources */,
 				4B3F571C27D6D52300FDFF1E /* GraficaData.swift in Sources */,
 				4B3F570127D6A1CF00FDFF1E /* SceneDelegate.swift in Sources */,
+				4B93477F27D8897B00E56086 /* Extensions.swift in Sources */,
 				4B3F571627D6A2F600FDFF1E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
